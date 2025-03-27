@@ -38,6 +38,7 @@ dependencies {
     implementation "io.jsonwebtoken:jjwt-impl:${jjwtVersion}"
     implementation "io.jsonwebtoken:jjwt-jackson:${jjwtVersion}"
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'org.hibernate.validator:hibernate-validator'
 }
 
 
