@@ -39,8 +39,14 @@ public class UserService {
 
     @Transactional
     public User createUser(User user) {
-        if (userRepository.findByUsername(user.getUsername()).isPresent()) { // Sửa ở đây
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
             throw new RuntimeException("Username đã tồn tại, vui lòng chọn tên khác!");
+        }
+        if (user.getEmail() == null || user.getEmail().isEmpty()) {
+            throw new IllegalArgumentException("Email không được để trống!");
+        }
+        if (user.getPhone() == null || user.getPhone().isEmpty()) {
+            throw new IllegalArgumentException("Phone không được để trống!"); // Thêm kiểm tra phone
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole("ROLE_USER");
@@ -49,19 +55,27 @@ public class UserService {
 
     public String registerUser(RegisterDTO registerDTO) {
         if (userRepository.existsByUsername(registerDTO.getUsername())) {
-            return "User already exists!";
+            return "Username đã tồn tại!";
+        }
+        if (registerDTO.getEmail() == null || registerDTO.getEmail().isEmpty()) {
+            return "Email không được để trống!";
+        }
+        if (registerDTO.getPhone() == null || registerDTO.getPhone().isEmpty()) {
+            return "Phone không được để trống!";
         }
 
         User user = new User();
         user.setUsername(registerDTO.getUsername());
         user.setPassword(passwordEncoder.encode(registerDTO.getPassword()));
         user.setRole(registerDTO.getRole());
+        user.setEmail(registerDTO.getEmail());
+        user.setPhone(registerDTO.getPhone());
 
         userRepository.save(user);
-        return "User registered successfully!";
+        return "Đăng kí User thành công!";
     }
 
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { // Sửa ở đây
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> userOptional = userRepository.findByUsername(username);
         User user = userOptional.orElseThrow(() -> new UsernameNotFoundException("User not found"));
         return new org.springframework.security.core.userdetails.User(

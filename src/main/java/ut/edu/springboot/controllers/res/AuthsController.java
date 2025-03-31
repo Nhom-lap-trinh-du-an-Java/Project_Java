@@ -49,7 +49,7 @@ public class AuthsController {
     }
     @PostMapping("/register")
     public ResponseEntity<String> registerUser(@RequestBody RegisterDTO registerDTO) {
-        String result = userService.registerUser(registerDTO);
+        String result = String.valueOf(userService.registerUser(registerDTO));
         return ResponseEntity.ok(result);
     }
     @GetMapping("/profile")
