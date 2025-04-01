@@ -46,10 +46,9 @@ public class UserService {
             throw new IllegalArgumentException("Email không được để trống!");
         }
         if (user.getPhone() == null || user.getPhone().isEmpty()) {
-            throw new IllegalArgumentException("Phone không được để trống!"); // Thêm kiểm tra phone
+            throw new IllegalArgumentException("Phone không được để trống!");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole("ROLE_USER");
         return userRepository.save(user);
     }
 
@@ -70,7 +69,7 @@ public class UserService {
         user.setRole(registerDTO.getRole());
         user.setEmail(registerDTO.getEmail());
         user.setPhone(registerDTO.getPhone());
-
+        user.setRole("ROLE_USER");
         userRepository.save(user);
         return "Đăng kí User thành công!";
     }
