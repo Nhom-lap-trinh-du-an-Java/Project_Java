@@ -1,0 +1,33 @@
+<div id="popup" class="popup">
+    <style>
+        .popup-content {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+    </style>
+    <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Đăng Bán Phụ Tùng</h2>
+        <form>
+            <label for="part-name">Tên phụ tùng:</label>
+            <input type="text" id="part-name" name="part-name" required>
+
+            <label for="car-brand">Hãng xe:</label>
+            <input type="text" id="car-brand" name="car-brand" required>
+
+            <label for="year">Năm sản xuất:</label>
+            <input type="number" id="year" name="year" required>
+
+            <label for="price">Giá tiền:</label>
+            <input type="number" id="price" name="price" required>
+
+            <label for="description">Chú thích:</label>
+            <textarea id="description" name="description"></textarea>
+
+            <label for="image-upload">Upload hình ảnh:</label>
+            <input type="file" id="image-upload" name="image-upload" accept="image/*">
+
+            <button type="submit" id="post-button">Đăng bài</button>
+        </form>
+    </div>
+</div>
