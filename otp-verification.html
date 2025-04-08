@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Xác nhận OTP - Project_Java</title>
+  <link th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="form-container">
+  <h2>Xác nhận OTP</h2>
+  <form th:action="@{/verify-otp}" method="post" id="otpForm">
+    <div class="form-group otp-group">
+      <label for="otp">Mã OTP</label>
+      <div class="otp-inputs">
+        <label>
+          <input type="text" maxlength="1" name="otp1" class="otp-field" required>
+        </label>
+        <label>
+          <input type="text" maxlength="1" name="otp2" class="otp-field" required>
+        </label>
+        <label>
+          <input type="text" maxlength="1" name="otp3" class="otp-field" required>
+        </label>
+        <label>
+          <input type="text" maxlength="1" name="otp4" class="otp-field" required>
+        </label>
+        <label>
+          <input type="text" maxlength="1" name="otp5" class="otp-field" required>
+        </label>
+        <label>
+          <input type="text" maxlength="1" name="otp6" class="otp-field" required>
+        </label>
+        <input type="hidden" id="otp" name="otp">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Xác nhận</button>
+  </form>
+  <div class="link">
+    <p>Không nhận được mã? <a href="../templates/foggotpassword.html">
+      <span class="link-name">Gửi lại</span>
+    </a></p>
+  </div>
+</div>
+<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+<script>
+  const otpInputs = document.querySelectorAll('.otp-field');
+  const hiddenOtp = document.getElementById('otp');
+
+  otpInputs.forEach((input, index) => {
+      input.addEventListener('input', (e) => {
+          if (e.target.value.length === 1 && index < otpInputs.length - 1) {
+              otpInputs[index + 1].focus();
+          updateHiddenOtp();
+      });
+      input.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !e.target.value && index > 0) {
+              otpInputs[index - 1].focus();
+          }
+      });
+  });
+
+  function updateHiddenOtp() {
+      const otpValue = Array.from(otpInputs).map(input => input.value).join('');
+      hiddenOtp.value = otpValue;
+</script>
+</body>
+</html>

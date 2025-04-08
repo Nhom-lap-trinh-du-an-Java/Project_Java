@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title><!DOCTYPE html>
+        <html lang="en" xmlns:th="http://www.thymeleaf.org">
+        <head>
+        <meta charset="UTF-8">
+        <title>Login - Project_Java</title>
+
+    <link th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" rel="stylesheet">
+
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="form-container">
+
+    <h2>Đăng nhập</h2>
+    <form method="post" th:action="@{/login}">
+        <div class="form-group">
+            <label for="username">Tên đăng nhập</label>
+            <label for="username"></label><input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+    </form>
+    <div class="link">
+        <p>Chưa có tài khoản? <a  href="../templates/register.html">
+            <i class="bx bxs-wrench"></i>
+            <span class="link-name">Đăng Kí</span></a></p>
+        <p> <a  href="../templates/register.html">
+            <i class="bx bxs-wrench"></i>
+            <p><a href="../templates/foggotpassword.html">
+                <i class="bx bxs-wrench"></i>
+                <span class="link-name">Quên mật khẩu</span>
+            </a></p>
+        </a></p>
+    </div>
+</div>
+
+<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
