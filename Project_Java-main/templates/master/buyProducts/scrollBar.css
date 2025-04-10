@@ -1,0 +1,20 @@
+.parts-list {
+    max-height: calc(100vh - 250px); /* 250px là chiều cao ước tính của header và các khoảng cách khác, bạn có thể điều chỉnh */
+    overflow-y: auto;
+    padding-right: 10px; /* Để tạo không gian cho thanh cuộn */
+}
+/* Nếu cần, có thể thêm style cho thanh cuộn (cho các trình duyệt hỗ trợ) */
+.parts-list::-webkit-scrollbar {
+    width: 8px;
+}
+.parts-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+.parts-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+.parts-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

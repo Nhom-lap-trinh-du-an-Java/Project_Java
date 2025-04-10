@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Page - Bán Phụ Tùng Xe</title>
+    <link rel="stylesheet" href="style(1).css">
+    <link rel="stylesheet" href="popupBuyProduct.css">
+    <link rel="stylesheet" href="scrollBar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+<div class="sidebar">
+    <div class="logo">
+        <h1>Boost</h1>
+    </div>
+    <ul class="nav-links">
+        <li>
+            <a href="../productRequirement/yeu-cau-phu-tung.html">
+                <i class='bx bxs-wrench'></i>
+                <span class="link_name">Yêu cầu phụ tùng</span>
+            </a>
+        </li>
+        <li>
+            <a href="../buyProducts/ban-phu-tung.html" class="active">
+                <i class='bx bxs-cart-add'></i>
+                <span class="link_name">Bán phụ tùng</span>
+            </a>
+        </li>
+        <li>
+            <a href="../aboutUs/thong_tin_ve_chung_toi.html">
+                <i class='bx bxs-info-circle'></i>
+                <span class="link_name">Về chúng tôi</span>
+            </a>
+        </li>
+        <li>
+            <a href="../phone/thong_tin_lien_he.html">
+                <i class='bx bxs-phone'></i>
+                <span class="link_name">Liên hệ</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="main-content">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Boost</h1>
+            </div>
+            <div class="search-section">
+                <div class="search-bar">
+                    <label>
+                        <input type="text" placeholder="Tìm kiếm phụ tùng cần bán">
+                    </label>
+                    <button type="submit">Tìm kiếm</button>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="post-ad">ĐĂNG BÁN</button>
+                <span class="phone">0000000000</span>
+                <a href="#" class="account">Tài khoản</a>
+            </div>
+        </div>
+    </header>
+    <main class="parts-listings">
+        <div class="content-wrapper">
+            <h1>Danh sách phụ tùng đang bán</h1>
+        </div>
+
+        <div class="listings-header">
+            <h2>Các Phụ tùng Đang Bán</h2>
+            <div class="sort-options">
+                <label for="sort">SẮP XẾP:</label>
+                <select id="sort">
+                    <option value="newest">Mới nhất</option>
+                    <option value="lowest-price">Giá thấp nhất</option>
+                    <option value="highest-price">Giá cao nhất</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="parts-list">
+            <div class="part-item">
+                <img src="Mâm.png" alt="Mâm X1R OZ winner">
+                <h3>Bán: Mâm X1R 0Z winner</h3>
+                <div class="part-details">
+                    <span class="brand">Honda</span>
+                    <span class="model">SH</span>
+                    <span class="year">2021</span>
+                    <span class="condition">Mới 100%</span>
+                </div>
+                <div class="price">Giá bán: 700.000 VNĐ</div>
+                <button class="view-details">Xem chi tiết</button>
+            </div>
+
+            <div class="part-item">
+                <img src="phuoc.png" alt="Phuộc xe SH">
+                <h3>Bán: Phuộc xe SH</h3>
+                <div class="part-details">
+                    <span class="brand">Yamaha</span>
+                    <span class="model">Exciter</span>
+                    <span class="year">2019</span>
+                    <span class="condition">Đã qua sử dụng</span>
+                </div>
+                <div class="price">Giá bán: 650.000 VNĐ</div>
+                <button class="view-details">Xem chi tiết</button>
+            </div>
+
+            <div class="part-item">
+                <img src="bô.png" alt="Pô zin dream đời 97">
+                <h3>Bán: Pô zin dream đời 97</h3>
+                <div class="part-details">
+                    <span class="brand">Yamaha</span>
+                    <span class="model">Exciter</span>
+                    <span class="year">2019</span>
+                    <span class="condition">Đã qua sử dụng</span>
+                </div>
+                <div class="price">Giá bán: 5.000.000 VNĐ</div>
+                <button class="view-details">Xem chi tiết</button>
+            </div>
+        </div>
+    </main>
+</div>
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Trang web bán phụ tùng xe boost</p>
+    </div>
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        if (sidebarBtn) {
+            sidebarBtn.addEventListener("click", ()=>{
+                sidebar.classList.toggle("close");
+            });
+        }
+    </script>
+</footer>
+<script src="popupPost.js"></script>
+</body>
+</html>
