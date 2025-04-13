@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <div id="head-container"></div>
+</head>
+<body>
+<div id="sidebar-container"></div>
+<div class="main-content">
+  <div id="navbar-container"></div>
+  <div id="main-container"></div>
+</div>
+<div id="footer-container"></div>
+
+<script>
+  async function loadContent(url, containerId) {
+    try {
+      const response = await fetch(url);
+      document.getElementById(containerId).innerHTML = await response.text();
+    } catch (error) {
+      console.error('Lỗi khi tải nội dung:', error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadContent('head.html', 'head-container');
+    loadContent('menu.html', 'sidebar-container');
+    loadContent('navbar.html', 'navbar-container');
+    loadContent('home.html', 'main-container');
+    loadContent('footer.html', 'footer-container');
+  });
+</script>
+</body>
+</html>
