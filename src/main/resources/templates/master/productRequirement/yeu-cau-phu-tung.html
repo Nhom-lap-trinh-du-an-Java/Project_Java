@@ -6,8 +6,11 @@
   <title>Master Page - Yêu Cầu Phụ Tùng Xe</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/popupRequest.css">
+  <link rel="stylesheet" href="/css/search-bar.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<script src="/js/load-search-bar.js" defer></script>
 <body>
 <div class="sidebar">
   <div class="logo">
@@ -46,26 +49,16 @@
       <div class="logo">
         <h1>Boost</h1>
       </div>
-      <div class="search-section">
-        <div class="search-bar">
-          <label>
-            <input type="text" placeholder="Tìm kiếm phụ tùng theo tên, hãng xe hoặc từ khóa">
-          </label>
-          <button type="submit">Tìm kiếm</button>
-        </div>
-      </div>
-      <div class="header-actions">
-        <button class="post-ad" >YÊU CẦU</button>
-        <span class="phone">0000000000</span>
-        <a href="#" class="account">Tài khoản</a>
-      </div>
+      <div class="search-bar-placeholder"></div>
     </div>
   </header>
   <main class="parts-listings">
     <div class="content-wrapper">
-      <h1>Đây là nội dung của Master Page</h1>
+      <div class="content-header">
+        <h1>Đây là nội dung của Master Page</h1>
+        <button class="request-btn post-ad">Yêu cầu</button>
+      </div>
     </div>
-
     <section class="featured-categories">
       <h2>Danh mục nổi bật</h2>
       <div class="container">

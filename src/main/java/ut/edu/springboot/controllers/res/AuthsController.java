@@ -76,4 +76,5 @@ public class AuthsController {
 
         return "Token: " + token; // Test xem có nhận được token không
     }
+
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/styles.css">
+  <link rel="stylesheet" href="/css/login.css">
   <title>Xác nhận OTP - Project_Java</title>
   <link th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <button type="submit" class="btn btn-primary">Xác nhận</button>
   </form>
   <div class="link">
-    <p>Không nhận được mã? <a href="foggotpassword.html">
+    <p>Không nhận được mã? <a href="foggotpassword">
       <span class="link-name">Gửi lại</span>
     </a></p>
   </div>
@@ -52,8 +52,9 @@
   otpInputs.forEach((input, index) => {
       input.addEventListener('input', (e) => {
           if (e.target.value.length === 1 && index < otpInputs.length - 1) {
-              otpInputs[index + 1].focus();
-          updateHiddenOtp();
+            otpInputs[index + 1].focus();
+            updateHiddenOtp();
+          }
       });
       input.addEventListener('keydown', (e) => {
           if (e.key === 'Backspace' && !e.target.value && index > 0) {
@@ -63,8 +64,9 @@
   });
 
   function updateHiddenOtp() {
-      const otpValue = Array.from(otpInputs).map(input => input.value).join('');
-      hiddenOtp.value = otpValue;
+    const otpValue = Array.from(otpInputs).map(input => input.value).join('');
+    hiddenOtp.value = otpValue;
+  }
 </script>
 </body>
 </html>

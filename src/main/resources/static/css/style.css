@@ -1,3 +1,14 @@
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    max-height: 90vh;
+    overflow-y: auto;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;

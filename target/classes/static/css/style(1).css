@@ -9,8 +9,7 @@
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
-.body {
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -103,7 +102,6 @@
     background-color: #f8f9fa;
 }
 
-
 .main-content {
     flex-grow: 1;
     background: #f4f6f8;
@@ -115,7 +113,6 @@
 .main-content.close {
     margin-left: 60px;
 }
-
 
 .main-content header {
     background-color: #fff;
@@ -134,40 +131,6 @@
     color: #007bff;
 }
 
-.main-content header .search-section {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-}
-
-.main-content header .search-section .search-bar {
-    width: 100%;
-    max-width: 400px;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.main-content header .search-section .search-bar input[type="text"] {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    font-size: 14px;
-}
-
-.main-content header .search-section .search-bar button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 14px;
-}
-
 .main-content header {
     display: flex;
     justify-content: space-between;
@@ -176,36 +139,6 @@
     background-color: #f8f9fa;
     border-bottom: 1px solid #ddd;
 }
-
-.main-content header .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Đảm bảo khoảng cách đồng đều giữa các nút */
-}
-
-.main-content header .header-actions button,
-.main-content header .header-actions a {
-    width: 120px; /* Đảm bảo kích thước đồng đều */
-    text-align: center;
-    color: #333;
-    text-decoration: none;
-    background: none;
-    border: 1px solid #ccc;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-}
-
-
-.main-content header .header-actions button:hover,
-.main-content header .header-actions a:hover {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-
 
 .main-content .content-wrapper {
     padding: 20px;
@@ -265,7 +198,6 @@
     margin: 0;
     color: #333;
 }
-
 
 .main-content .parts-listings {
     padding: 20px 0;
@@ -451,7 +383,7 @@ footer {
 
     .main-content header .header-actions button,
     .main-content header .header-actions a {
-        min-width: 120px; /* Đảm bảo hai nút có chiều rộng tối thiểu giống nhau */
+        min-width: 120px;
         text-align: center;
     }
 
@@ -462,4 +394,29 @@ footer {
     .main-content .parts-listings .parts-list {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+}
+
+/* CSS cho nút Yêu Cầu */
+.main-content .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.request-btn {
+    padding: 8px 16px; /* Adjusted padding to match the button size in the image */
+    background-color: #1a73e8; /* Blue color matching the screenshot */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Rounded corners to match the image */
+    font-size: 14px; /* Font size to match the image */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.request-btn:hover {
+    background-color: #1557b0; /* Slightly darker blue on hover */
 }

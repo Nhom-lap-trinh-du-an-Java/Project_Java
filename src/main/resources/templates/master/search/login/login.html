@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Project_Java</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="form-container">
+    <h2>Đăng nhập</h2>
+    <form id="login-form">
+        <div class="form-group">
+            <label for="username">Tên đăng nhập</label>
+            <input type="text" id="username" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Mật khẩu</label>
+            <input type="password" id="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+    </form>
+
+    <div class="link">
+        <p>Chưa có tài khoản?
+            <a href="register"><span class="link-name">Đăng Ký</span></a>
+        </p>
+        <p>
+            <a href="foggotpassword"><span class="link-name">Quên mật khẩu</span></a>
+        </p>
+    </div>
+</div>
+
+<script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+
+<script>
+    document.getElementById("login-form").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            const response = await fetch("/auths/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({username, password})
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                localStorage.setItem("token", data.token);
+
+                // Giải mã token để lấy role (nếu cần)
+                const payload = JSON.parse(atob(data.token.split('.')[1]));
+                const role = payload.role;
+
+                alert("Đăng nhập thành công!");
+
+                if (role === "ROLE_ADMIN") {
+                    window.location.href = "/admin/dashboard";
+                } else if (role === "ROLE_USER") {
+                    window.location.href = "/productRequirement/yeu-cau-phu-tung";
+                } else {
+                    window.location.href = "/";
+                }
+            } else {
+                const errorText = await response.text();
+                alert("Đăng nhập thất bại: " + errorText);
+            }
+        } catch (error) {
+            console.error("Lỗi đăng nhập:", error);
+            alert("Lỗi hệ thống, thử lại sau.");
+        }
+    });
+</script>
+
+</body>
+</html>

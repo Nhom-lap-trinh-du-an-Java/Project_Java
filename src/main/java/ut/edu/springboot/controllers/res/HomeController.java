@@ -31,5 +31,29 @@ public class HomeController {
     public String phone() {
         return "master/phone/thong_tin_lien_he";
     }
+    @GetMapping("/buyProducts/chi-tiet-san-pham")
+    public String productDetails() {
+        return "master/buyProducts/chi-tiet-san-pham";
+    }
+
+    @GetMapping("/search/login/login")
+    public String login() {
+        return "master/search/login/login";
+    }
+
+    @GetMapping("/search/login/register")
+    public String register() {
+        return "master/search/login/register";
+    }
+
+    @GetMapping("/search/login/foggotpassword")
+    public String forgotPassword() {
+        return "master/search/login/foggotpassword";
+    }
+    @GetMapping("/search/login/otp-verification")
+    public String otpVerification() {
+        return "master/search/login/otp-verification";
+    }
+
 
 }
