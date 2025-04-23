@@ -35,7 +35,7 @@ public class SecurityConfig {
                         .requestMatchers("/", "/yeu-cau-phu-tung","/css/**", "/js/**", "/images/**"
                         ,"/popupRequest","/ban-phu-tung","/buyProducts/**","/master/**"
                         ,"/aboutUs/**","/productRequirement/**","/phone/**"
-                        ,"/search/**","/login/**").permitAll()
+                        ,"/search/**","/login/**","/register/**").permitAll()
                         .requestMatchers("/auths/**").permitAll()
                         .requestMatchers("/users/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/admin/**").hasRole("ADMIN")

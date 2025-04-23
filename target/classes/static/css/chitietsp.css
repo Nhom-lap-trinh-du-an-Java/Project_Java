@@ -1,0 +1,471 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #FFFFFF, #FFFFFF); /* Gradient background */
+    margin: 0;
+}
+
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+.otp-group {
+    margin-bottom: 2rem;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Khoảng cách giữa các ô */
+}
+
+.otp-field {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #fff;
+    padding: 0;
+}
+
+.otp-field:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.otp-field:valid {
+    border-color: #27ae60; /* Màu xanh lá khi nhập đúng */
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #FFFFFF, #FFFFFF); /* Gradient background */
+    margin: 0;
+}
+
+.form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+.otp-group {
+    margin-bottom: 2rem;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Khoảng cách giữa các ô */
+}
+
+.otp-field {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #fff;
+    padding: 0;
+}
+
+.otp-field:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+
+.otp-field:valid {
+    border-color: #27ae60; /* Màu xanh lá khi nhập đúng */
+}
+
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thay đổi body để phù hợp với giao diện sáng */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff; /* Nền trắng */
+    color: #333; /* Chữ tối */
+    line-height: 1.6;
+    height: auto; /* Bỏ height: 100vh */
+    display: block; /* Bỏ flex */
+}
+
+/* Header */
+.header {
+    background-color: #f8f9fa; /* Nền sáng */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    color: #007bff; /* Màu xanh giống Bootstrap primary */
+    font-size: 2rem;
+}
+
+.nav .nav-link {
+    color: #333 !important; /* Chữ tối */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav .nav-link:hover {
+    color: #007bff !important; /* Màu xanh khi hover */
+}
+
+/* Container chính */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Phần sản phẩm */
+.product-section {
+    background-color: #fff; /* Nền trắng */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    background-color: #fff;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.product-title {
+    color: #333; /* Chữ tối */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.price {
+    color: #dc3545; /* Màu đỏ giống Bootstrap danger */
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.options label {
+    color: #555; /* Màu chữ nhạt */
+}
+
+.options select {
+    background-color: #fff; /* Nền trắng */
+    color: #333; /* Chữ tối */
+}
+
+.buy-now {
+    font-size: 1.1rem;
+}
+
+.availability {
+    color: #28a745; /* Màu xanh lá giống Bootstrap success */
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+/* Phần mô tả */
+.description-section {
+    background-color: #fff; /* Nền trắng */
+    border: 1px solid #ddd;
+}
+
+.description-section h3 {
+    color: #333; /* Chữ tối */
+}
+
+.description-section p {
+    color: #555; /* Chữ nhạt */
+}
+
+/* Phần đánh giá */
+.review-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.review-section h3 {
+    color: #333;
+}
+
+.rating-overview {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.star-rating {
+    color: #ffc107;
+}
+
+.review-form textarea {
+    resize: vertical;
+}
+
+/* Phần bình luận */
+.comment-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.comment-section h3 {
+    color: #333;
+}
+
+.comments-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.comment {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.comment p {
+    color: #555;
+}
+
+.comment-form textarea {
+    resize: vertical;
+}
+
+/* Sản phẩm liên quan */
+.related-products {
+    background-color: #fff; /* Nền trắng */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.related-products h3 {
+    color: #333; /* Chữ tối */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: nowrap; /* Ép các sản phẩm nằm trên cùng một hàng */
+    gap: 30px;
+    overflow-x: auto; /* Cho phép cuộn ngang nếu không đủ chỗ */
+}
+
+.product-item {
+    flex: 0 0 350px; /* Chiều rộng cố định cho mỗi sản phẩm */
+    background-color: #f8f9fa; /* Nền sáng */
+    padding: 15px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-item img {
+    max-height: 150px;
+    width: 100%;
+    object-fit: contain; /* Đảm bảo hình ảnh không bị méo */
+}
+
+.product-item a {
+    color: #333; /* Chữ tối */
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.product-item a:hover {
+    color: #007bff; /* Màu xanh khi hover */
+}
+
+.product-item p {
+    color: #dc3545; /* Màu đỏ cho giá */
+    margin: 5px 0;
+}
+
+/* Footer */
+.footer {
+    background-color: #f8f9fa; /* Nền sáng */
+    color: #555; /* Chữ nhạt */
+}
+
+.footer-section h4 {
+    color: #333; /* Chữ tối */
+}
+
+.footer-section p, .footer-section a {
+    color: #555; /* Chữ nhạt */
+}
+
+.footer-section a:hover {
+    color: #007bff; /* Màu xanh khi hover */
+}
+
+.footer-bottom {
+    color: #555; /* Chữ nhạt */
+}

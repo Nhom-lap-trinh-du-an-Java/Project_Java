@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/login.css">
-    <title><!DOCTYPE html>
-      <html lang="en" xmlns:th="http://www.thymeleaf.org">
-      <head>
-      <meta charset="UTF-8">
-      <title>Register - Project_Java</title>
+  <title>Register - Project_Java</title>
   <!-- Bootstrap CSS -->
   <link th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}" rel="stylesheet">
   <!-- Custom CSS -->
   <link th:href="@{/css/styles.css}" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Boxicons CSS (Optional) -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="form-container">
   <h2>Đăng kí</h2>
-  <form th:action="@{/register}" method="post">
+  <form id="register-form" th:action="@{/auths/register}" method="post">
     <div class="form-group">
       <label for="username">Tên đăng nhập</label>
       <input type="text" id="username" name="username" class="form-control" required>
@@ -34,17 +32,40 @@
     </div>
     <button type="submit" class="btn btn-success">Đăng kí</button>
   </form>
+  <script>
+    document.getElementById("register-form").addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const data = {
+            username: document.getElementById("username").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        };
+
+        const response = await fetch("/auths/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.text();
+        if (response.ok) {
+            alert("Đăng ký thành công!");
+            window.location.href = "/search/login/login";
+        } else {
+            alert("Đăng ký thất bại: " + result);
+        }
+    });
+  </script>
   <div class="link">
     <p>Đã có tài khoản? <a href="login">
       <i class="bx bxs-wrench"></i>
       <span class="link-name">Đăng Nhập</span>
     </a></p>
-
   </div>
 </div>
-
 <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
-
-
